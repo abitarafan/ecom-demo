@@ -124,12 +124,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('DB_ENGINE'),
-        'NAME': os.environ.get('DB_NAME'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST': os.environ.get('DATABASE_URL'),
-        'PORT': os.environ.get('DB_PORT')
+        'HOST': 'db-ecom-ft.ct8mggzmrwdf.us-east-1.rds.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
@@ -186,12 +186,13 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 
 AWS_QUERYSTRING_AUTH = False
-DEFAULT_FILE_STORAGE = os.environ.get('FILE_STORAGE')
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_STORAGE_BUCKET_NAME = 'ecom-products-abit'
 
 
 if os.getcwd() == '/app':
