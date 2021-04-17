@@ -1,6 +1,6 @@
 # Registration
 
-User can be registered using fake email due since it is for demo purposes.
+User can be registered using fake email since it is for demo purposes.
 
 # To add remove or update products
 
