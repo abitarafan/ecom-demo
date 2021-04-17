@@ -7,6 +7,7 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 import { listProductDetails, createProductReview } from '../actions/productActions'
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants'
+import { addToCart } from '../actions/cartActions'
 
 function ProductScreen({ match, history }) {
     const [qty, setQty] = useState(1)
@@ -39,9 +40,6 @@ function ProductScreen({ match, history }) {
 
     }, [dispatch, match, successProductReview])
 
-    const addToCartHandler = () => {
-        history.push(`/cart/${match.params.id}?qty=${qty}`)
-    }
 
     const submitHandler = (e) => {
         e.preventDefault()
@@ -71,7 +69,7 @@ function ProductScreen({ match, history }) {
                                 <Col md={3}>
                                     <ListGroup variant="flush">
                                         <ListGroup.Item>
-                                            <h3>{product.name}</h3>
+                                            <label>{product.name}</label>
                                         </ListGroup.Item>
 
                                         <ListGroup.Item>
@@ -137,8 +135,8 @@ function ProductScreen({ match, history }) {
 
                                             <ListGroup.Item>
                                                 <Button
-                                                    onClick={addToCartHandler}
-                                                    className='btn-block'
+                                                    onClick={() => dispatch(addToCart(match.params.id, qty))}
+                                                    variant='warning'
                                                     disabled={product.countInStock === 0}
                                                     type='button'>
                                                     Add to Cart

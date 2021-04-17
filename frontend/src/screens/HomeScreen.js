@@ -27,33 +27,31 @@ function HomeScreen({ history }) {
             {!keyword }
 
             <>
-            <ButtonGroup className="sm-btn" aria-label="Basic example">
-               <Button
-                variant='secondary'
+            <ButtonGroup className="mr-2" size="sm">
+                <Button
+                variant="outline-danger"
+                onClick={()=>dispatch(sortProductsAZ(products))}
+                >
+                   ABC
+                </Button>
+                <Button
+                variant="outline-danger"
                 onClick={()=>dispatch(sortProductsZA(products))}
                >
-                   Z - A
+                   ZXY
                </Button>
-
                <Button
-                variant='secondary'
-                onClick={()=>dispatch(sortProductsAZ(products))}
-               >
-                   A - Z
-               </Button>
-
-               <Button
-                variant='secondary'
+                variant="outline-danger"
                 onClick={()=>dispatch(sortProductsHL(products))}
                >
-                   Low to High
+                   Cheapest
                </Button>
 
                <Button
-                variant='secondary'
+                variant="outline-danger"
                 onClick={()=>dispatch(sortProductsLH(products))}
                >
-                   High to Low
+                   Most Expensive
                </Button>
             </ButtonGroup>
             </>
