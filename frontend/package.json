@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "proxy": "http://127.0.0.1:8000",
+  "proxy": "https://ecom-abit-demo.herokuapp.com",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
