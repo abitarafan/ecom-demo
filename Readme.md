@@ -1,3 +1,8 @@
+# Demo site is found in here:
+  https://ecom-abit-demo.herokuapp.com/#/
+
+# Admin user and password will be provided based on request
+
 # Registration
 
 User can be registered using fake email since it is for demo purposes.
